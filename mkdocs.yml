@@ -1,0 +1,23 @@
+site_name: Spello Consulting Weather Library
+site_url: https://github.com/NickElseySpelloC/sc-weather
+
+theme:
+  name: material
+
+plugins:
+  - search
+  - include-markdown
+  - mkdocstrings:
+      handlers:
+        python:
+          paths:
+            - src
+          options:
+            docstring_style: google  # or numpy, sphinx
+            show_source: false
+            heading_level: 2
+
+nav:
+  - Home: index.md
+  - WeatherClient: weather_client.md
+  - WeatherIconProvider: icon_provider.md      

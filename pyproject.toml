@@ -1,6 +1,6 @@
 [project]
 name = "sc-weather"
-version = "3.0.0"
+version = "3.0.1"
 description = "A simple wrapper for the OpenWeatherMap and Open-Meteo weather providers"
 readme = "README.md"
 requires-python = ">=3.13"
@@ -40,12 +40,14 @@ zip-safe = false
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+"sc_weather" = ["weather_icons/**/*.svg"]
+
 [dev.env.sync]
 remote="~/Library/CloudStorage/Dropbox/Development/dev_setup/app_config/sc-weather"
 patterns = [
     ".env",
-    ".vscode/launch.json",
+    ".vscode/*.json",
     "development/*.yaml",
     "development/*.log",
-    "tests/config.yaml",
 ]

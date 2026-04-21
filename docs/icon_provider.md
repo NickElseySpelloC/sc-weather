@@ -15,7 +15,7 @@ The key is used in the library argument when initialising the WeatherIconProvide
 from pathlib import Path
 
 import weather_client
-from weather_client.icon_provider import WeatherIconProvider
+from sc_weather.icon_provider import WeatherIconProvider
 
 
 ICON_LIBRARY = "meteocons"

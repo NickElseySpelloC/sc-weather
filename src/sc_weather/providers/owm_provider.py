@@ -254,7 +254,11 @@ class OWMProvider:
         current_weather = (current_data.get("weather") or [{}])[0] or {}
         current_wind = current_data.get("wind") or {}
         current_main = current_data.get("main") or {}
-        astral_data = DateHelper.get_dawn_dusk_times(lat, lon)
+        location_config = {
+            "Latitude": lat,
+            "Longitude": lon,
+        }
+        astral_data = DateHelper.dawn_dusk_times(location_config)
         current_astral = self._build_astral_info_for_times(
             time_now,
             sunrise.astimezone() if (sunrise := astral_data.get("sunrise")) is not None else None,
@@ -321,7 +325,7 @@ class OWMProvider:
             wind = item.get("wind") or {}
             main = item.get("main") or {}
             local_time = utc_ts.astimezone()
-            astral_data = DateHelper.get_dawn_dusk_times(lat, lon, as_at=utc_ts.date())
+            astral_data = DateHelper.dawn_dusk_times(location_config=location_config, as_at=utc_ts.date())
             hour_astral = self._build_astral_info_for_times(
                 local_time,
                 sunrise.astimezone() if (sunrise := astral_data.get("sunrise")) is not None else None,

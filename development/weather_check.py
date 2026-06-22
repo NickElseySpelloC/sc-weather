@@ -93,8 +93,8 @@ def build_weather_icon_refs(icon_provider: WeatherIconProvider, weather_data) ->
 def main() -> None:
     api_key = os.environ.get("OWM_API_KEY_V3")
     # api_key = os.environ.get("OWM_API_KEY_FREE")
-    latitude = -33.7234659
-    longitude = 151.0965371
+    latitude = 43.0
+    longitude = 12.7
 
     client = WeatherClient(
         latitude=latitude,

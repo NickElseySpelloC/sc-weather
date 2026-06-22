@@ -1,12 +1,12 @@
 [project]
 name = "sc-weather"
-version = "3.0.1"
+version = "3.0.2"
 description = "A simple wrapper for the OpenWeatherMap and Open-Meteo weather providers"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "pyowm>=3.5.0",
-    "sc-foundation-services>=3.0.3",
+    "sc-foundation-services>=3.2.0",
 ]
 
 [project.optional-dependencies]

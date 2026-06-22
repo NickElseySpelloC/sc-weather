@@ -35,7 +35,7 @@ def test_owm_provider_falls_back_to_free_endpoints_on_unauthorized(mocker):
         side_effect=UnauthorizedError("Invalid API Key provided"),
     )
     mocker.patch(
-        "sc_weather.providers.owm_provider.DateHelper.get_dawn_dusk_times",
+        "sc_weather.providers.owm_provider.DateHelper.dawn_dusk_times",
         return_value={
             "sunrise": local_now.replace(hour=6, minute=0, second=0, microsecond=0),
             "sunset": local_now.replace(hour=18, minute=0, second=0, microsecond=0),
